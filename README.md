@@ -1,6 +1,6 @@
 # NPM Mirror Server
 
-A NPM Mirror server, using `sonopia`.
+A NPM Mirror server, using `sinopia`.
 
 ## How to use this image
 
@@ -12,7 +12,7 @@ following:
 docker run --name some-npm-mirror-server \
            --detach \
            --volume /home/storage:/var/opt/sinopia \
-           --publish 2000:2000 \
+           --publish 4873:4873 \
            garethflowers/npm-mirror
 ```
 
