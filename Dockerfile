@@ -1,12 +1,17 @@
 FROM node:7-alpine
 
-RUN npm install -g npm-lazy-mirror
+RUN adduser -DH nodeuser \
+    && npm update npm \
+    && npm install --global sinopia2 \
+    && mkdir -p /var/opt/sinopia \
+    && chown nodeuser:nodeuser /var/opt/sinopia
 
-WORKDIR /var/opt/npm-lazy-mirror
+COPY [ "./config.yaml", "/var/opt/sinopia" ]
 
-COPY [ "config.json", "/var/opt/npm-lazy-mirror/config.json" ]
+WORKDIR /var/opt
+USER nodeuser
 
-VOLUME [ "/var/opt/npm-lazy-mirror" ]
-EXPOSE 2000
+VOLUME [ "/var/opt/sinopia" ]
+EXPOSE 4873
 
-CMD [ "node", "/usr/local/lib/node_modules/npm-lazy-mirror/server.js", "-C", "/var/opt/npm-lazy-mirror/config.json" ]
+CMD [ "sinopia" ]
