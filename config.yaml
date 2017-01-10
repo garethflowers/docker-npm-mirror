@@ -1,0 +1,22 @@
+storage: ./storage
+
+web:
+  enable: true
+  title: NPM Mirror Registry
+
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+
+packages:
+  '@*/*':
+    access: $all
+    allow_publish: $all
+    proxy: npmjs
+  '*':
+    access: $all
+    allow_publish: $all
+    proxy: npmjs
+
+listen:
+  - 0.0.0.0:4873
