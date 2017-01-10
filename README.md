@@ -22,4 +22,4 @@ docker run --name some-npm-mirror-server \
 * This image is released under the [MIT License][2]
 
  [1]: https://github.com/hpcloud/npm-lazy-mirror/blob/master/LICENSE.txt
- [2]: https://raw.githubusercontent.com/garethflowers/docker-svn-server/master/LICENSE
+ [2]: https://raw.githubusercontent.com/garethflowers/npm-mirror/master/LICENSE
