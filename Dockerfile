@@ -1,4 +1,4 @@
-FROM node:8-alpine
+FROM node:8.4.0-alpine
 
 RUN adduser -DH nodeuser \
     && npm update npm \
@@ -14,6 +14,6 @@ USER nodeuser
 VOLUME [ "/var/opt/sinopia" ]
 EXPOSE 4873
 
-HEALTHCHECK CMD wget -s http://localhost:4873 || exit 1
+HEALTHCHECK CMD wget --spider http://localhost:4873 || exit 1
 
 CMD [ "sinopia" ]
