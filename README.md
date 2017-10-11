@@ -1,4 +1,7 @@
-# NPM Mirror Server
+# NPM Mirror 
+
+[![Image Layers](https://images.microbadger.com/badges/image/garethflowers/npm-mirror.svg)](https://microbadger.com/images/garethflowers/npm-mirror)
+[![Docker Pulls](https://img.shields.io/docker/pulls/garethflowers/npm-mirror.svg)](https://store.docker.com/community/images/garethflowers/npm-mirror)
 
 A NPM Mirror server, using `sinopia`.
 
