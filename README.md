@@ -1,9 +1,9 @@
-# NPM Mirror 
+# NPM Mirror
 
 [![Image Layers](https://images.microbadger.com/badges/image/garethflowers/npm-mirror.svg)](https://microbadger.com/images/garethflowers/npm-mirror)
 [![Docker Pulls](https://img.shields.io/docker/pulls/garethflowers/npm-mirror.svg)](https://store.docker.com/community/images/garethflowers/npm-mirror)
 
-A NPM Mirror server, using `sinopia`.
+A NPM Mirror server, using `verdaccio`.
 
 ## How to use this image
 
@@ -14,7 +14,7 @@ following:
 ```sh
 docker run --name some-npm-mirror-server \
            --detach \
-           --volume /home/storage:/var/opt/sinopia \
+           --volume /home/storage:/var/opt/verdaccio \
            --publish 4873:4873 \
            garethflowers/npm-mirror
 ```

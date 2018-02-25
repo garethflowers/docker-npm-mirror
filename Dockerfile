@@ -1,16 +1,16 @@
-FROM node:8.4.0-alpine
+FROM node:9.6.1-alpine
 
-CMD [ "sinopia" ]
+CMD [ "verdaccio" ]
 EXPOSE 4873
 HEALTHCHECK CMD netstat -ln | grep 4873 || exit 1
-VOLUME [ "/var/opt/sinopia" ]
-WORKDIR /var/opt/sinopia
+VOLUME [ "/var/opt/verdaccio" ]
+WORKDIR /var/opt/verdaccio
 
 RUN adduser -DH nodeuser \
     && npm update npm \
-    && npm install --global sinopia2 \
-    && chown nodeuser:nodeuser /var/opt/sinopia
+    && npm install --global verdaccio \
+    && chown nodeuser:nodeuser /var/opt/verdaccio
 
 USER nodeuser
 
-COPY [ "./config.yaml", "/var/opt/sinopia" ]
+COPY [ "./config.yaml", "/var/opt/verdaccio" ]
