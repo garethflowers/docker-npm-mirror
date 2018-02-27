@@ -8,4 +8,4 @@ install:
   - docker run -d -p 4873:4873 npm-mirror
 
 script:
-  - curl -fIsS http://127.0.0.1:4873
+  - curl -fIsS http://0.0.0.0:4873
