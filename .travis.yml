@@ -5,7 +5,7 @@ services:
 
 install:
   - docker build -t npm-mirror .
-  - docker run -d -p 4873:4873 --name npm-mirror npm-mirror
+  - docker run -d -p 4873:4873 npm-mirror
 
 script:
   - curl -fIsS http://127.0.0.1:4873
