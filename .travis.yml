@@ -8,4 +8,5 @@ install:
   - docker run -d -p 4873:4873 npm-mirror
 
 script:
+  - netstat -a -p TCP -n | grep 4873
   - curl -IS http://localhost:4873
