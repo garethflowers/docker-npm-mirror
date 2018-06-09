@@ -4,7 +4,7 @@ CMD [ "verdaccio" ]
 EXPOSE 4873
 HEALTHCHECK CMD netstat -ln | grep 4873 || exit 1
 VOLUME [ "/var/opt/verdaccio" ]
-WORKDIR /var/opt/verdaccio
+WORKDIR "/var/opt/verdaccio"
 
 RUN adduser -DH nodeuser \
     && npm update npm \
@@ -13,4 +13,4 @@ RUN adduser -DH nodeuser \
 
 USER nodeuser
 
-COPY [ "./config.yaml", "/var/opt/verdaccio" ]
+COPY [ "config.yaml", "/var/opt/verdaccio" ]
