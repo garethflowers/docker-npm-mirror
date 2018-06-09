@@ -1,4 +1,4 @@
-FROM node:9.6.1-alpine
+FROM node:9.8.0-alpine
 
 CMD [ "verdaccio" ]
 EXPOSE 4873
