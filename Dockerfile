@@ -7,8 +7,8 @@ VOLUME [ "/var/opt/verdaccio" ]
 WORKDIR "/var/opt/verdaccio"
 
 RUN npm update npm \
-    && npm install --global verdaccio \
-    && chown node:node /var/opt/verdaccio
+	&& npm install --global verdaccio \
+	&& chown node:node /var/opt/verdaccio
 
 USER node
 
