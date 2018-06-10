@@ -10,7 +10,7 @@ A NPM Mirror server, using `verdaccio`.
 
 ### Start a NPM Mirror Server instance
 
-To start a container, with data stored in /home/storage on the host, use the
+To start a container, with data stored in `/home/storage` on the host, use the
 following:
 ```sh
 docker run
