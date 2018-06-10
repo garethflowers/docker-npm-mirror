@@ -1,12 +1,15 @@
 language: bash
 
+addons:
+  apt:
+    update: true
+
 services:
   - docker
 
-before_install:
+install:
   - docker build -t npm-mirror .
   - docker run -d -p 4873:4873 npm-mirror
-  - docker ps -a
 
 script:
   - netstat -ln | grep 4873
