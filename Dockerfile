@@ -20,8 +20,11 @@ HEALTHCHECK CMD netstat -ln | grep 4873 || exit 1
 VOLUME [ "/var/opt/verdaccio" ]
 WORKDIR "/var/opt/verdaccio"
 
-RUN npm update npm \
-	&& npm install --global verdaccio \
+RUN apk add --no-cache --virtual .build-deps \
+	make \
+	python \
+	&& npm install verdaccio \
+	&& apk del .build-deps \
 	&& chown node:node /var/opt/verdaccio
 
 USER node
