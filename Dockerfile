@@ -6,11 +6,10 @@ HEALTHCHECK CMD netstat -ln | grep 4873 || exit 1
 VOLUME [ "/var/opt/verdaccio" ]
 WORKDIR "/var/opt/verdaccio"
 
-RUN adduser -DH nodeuser \
-    && npm update npm \
+RUN npm update npm \
     && npm install --global verdaccio \
-    && chown nodeuser:nodeuser /var/opt/verdaccio
+    && chown node:node /var/opt/verdaccio
 
-USER nodeuser
+USER node
 
 COPY [ "config.yaml", "/var/opt/verdaccio" ]
