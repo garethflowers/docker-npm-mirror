@@ -4,7 +4,7 @@ ARG BUILD_DATE
 ARG VCS_REF
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
-	org.label-schema.docker.cmd="docker run -d -p 4873:4873 -v $PWD:/var/opt/verdaccio garethflowers/npm-mirror" \
+	org.label-schema.docker.cmd="docker run --detach --publish 4873:4873 --volume $PWD:/var/opt/verdaccio garethflowers/npm-mirror" \
 	org.label-schema.description="NPM Mirror" \
 	org.label-schema.name="npm-mirror" \
 	org.label-schema.schema-version="1.0" \
