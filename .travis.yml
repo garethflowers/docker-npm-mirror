@@ -8,8 +8,8 @@ services:
   - docker
 
 install:
-  - docker build -t npm-mirror .
-  - docker run -d -p 4873:4873 npm-mirror
+  - docker build --tag npm-mirror .
+  - docker run --detach --publish 4873:4873 npm-mirror
 
 script:
   - netstat -ln | grep 4873
