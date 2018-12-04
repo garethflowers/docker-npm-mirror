@@ -12,13 +12,14 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 	org.label-schema.vcs-ref=$VCS_REF \
 	org.label-schema.vcs-url="https://github.com/garethflowers/docker-npm-mirror" \
 	org.label-schema.vendor="garethflowers" \
-	org.label-schema.version="1.1.0"
+	org.label-schema.version="1.1.1"
 
-CMD [ "verdaccio" ]
+CMD [ "su-exec", "node", "verdaccio" ]
+ENTRYPOINT [ "/opt/docker/entrypoint.sh" ]
 EXPOSE 4873
 HEALTHCHECK CMD netstat -ln | grep 4873 || exit 1
 VOLUME [ "/var/opt/verdaccio" ]
-WORKDIR "/var/opt/verdaccio"
+WORKDIR /var/opt/verdaccio
 
 RUN apk add --no-cache --virtual .build-deps \
 	make \
@@ -27,8 +28,7 @@ RUN apk add --no-cache --virtual .build-deps \
 	&& npm --global install verdaccio@3.7.0 \
 	&& npm --global config set user node \
 	&& apk del .build-deps \
-	&& chown node:node /var/opt/verdaccio
+	&& apk add su-exec
 
-USER node
-
+COPY [ "Entrypoint.sh", "/opt/docker/entrypoint.sh" ]
 COPY [ "config.yaml", "/var/opt/verdaccio" ]
