@@ -30,5 +30,5 @@ RUN apk add --no-cache --virtual .build-deps \
 	&& apk del .build-deps \
 	&& apk add su-exec
 
-COPY [ "Entrypoint.sh", "/opt/docker/entrypoint.sh" ]
-COPY [ "config.yaml", "/var/opt/verdaccio" ]
+COPY [ "src/entrypoint.sh", "/opt/docker/entrypoint.sh" ]
+COPY [ "src/config.yaml", "/var/opt/verdaccio" ]
