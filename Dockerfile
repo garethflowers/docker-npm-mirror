@@ -12,7 +12,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 	org.label-schema.vcs-ref=$VCS_REF \
 	org.label-schema.vcs-url="https://github.com/garethflowers/docker-npm-mirror" \
 	org.label-schema.vendor="garethflowers" \
-	org.label-schema.version="1.1.3"
+	org.label-schema.version="1.1.4"
 
 CMD [ "su-exec", "node", "verdaccio" ]
 ENTRYPOINT [ "/opt/docker/entrypoint.sh" ]
