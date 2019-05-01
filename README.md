@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/garethflowers/docker-npm-mirror.svg?branch=master)](https://travis-ci.org/garethflowers/docker-npm-mirror) [![Image Layers](https://images.microbadger.com/badges/image/garethflowers/npm-mirror.svg)](https://microbadger.com/images/garethflowers/npm-mirror) [![Docker Pulls](https://img.shields.io/docker/pulls/garethflowers/npm-mirror.svg)](https://store.docker.com/community/images/garethflowers/npm-mirror)
+[![Build Status](https://travis-ci.org/garethflowers/docker-npm-mirror.svg?branch=master)](https://travis-ci.org/garethflowers/docker-npm-mirror) [![Version](https://images.microbadger.com/badges/version/garethflowers/npm-mirror.svg)](https://microbadger.com/images/garethflowers/npm-mirror) [![Image Layers](https://images.microbadger.com/badges/image/garethflowers/npm-mirror.svg)](https://microbadger.com/images/garethflowers/npm-mirror) [![Docker Pulls](https://img.shields.io/docker/pulls/garethflowers/npm-mirror.svg)](https://store.docker.com/community/images/garethflowers/npm-mirror)
 
 # NPM Mirror
 
@@ -12,7 +12,7 @@ To start a container, with data stored in `/home/storage` on the host, use the
 following:
 ```sh
 docker run
-	--name some-npm-mirror-server \
+	--name my-npm-mirror \
 	--detach \
 	--volume /home/storage:/var/opt/verdaccio \
 	--publish 4873:4873 \
