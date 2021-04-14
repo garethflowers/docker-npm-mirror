@@ -24,9 +24,7 @@ WORKDIR /var/opt/verdaccio
 RUN apk add --no-cache --virtual .build-deps \
 	make \
 	python \
-	&& npm --global config set user root \
 	&& npm --global install verdaccio@3.11.6 \
-	&& npm --global config set user node \
 	&& apk del .build-deps \
 	&& apk add su-exec
 
