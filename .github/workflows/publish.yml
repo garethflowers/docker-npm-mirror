@@ -15,8 +15,8 @@ jobs:
         uses: crazy-max/ghaction-docker-meta@v2
         with:
           images: |
-            ${{ github.repository_owner }}/nginx-proxy
-            ghcr.io/${{ github.repository_owner }}/nginx-proxy
+            ${{ github.repository_owner }}/npm-mirror
+            ghcr.io/${{ github.repository_owner }}/npm-mirror
           tags: |
             type=edge,branch=main
             type=semver,pattern={{version}}
