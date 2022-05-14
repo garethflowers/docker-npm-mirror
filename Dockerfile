@@ -1,4 +1,4 @@
-FROM node:11.14.0-alpine
+FROM node:18.1.0-alpine
 
 CMD [ "su-exec", "node", "verdaccio" ]
 ENTRYPOINT [ "/opt/docker/entrypoint.sh" ]
