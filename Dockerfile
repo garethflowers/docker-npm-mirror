@@ -11,7 +11,6 @@ RUN apk add --no-cache --virtual \
 	.build-deps \
 	make \
 	python3 \
-	&&  \
 	&& npm --global install verdaccio@3.11.6 \
 	&& apk del .build-deps \
 	&& apk add su-exec
