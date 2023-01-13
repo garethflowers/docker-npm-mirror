@@ -7,9 +7,11 @@ HEALTHCHECK CMD netstat -ln | grep 4873 || exit 1
 VOLUME [ "/var/opt/verdaccio" ]
 WORKDIR /var/opt/verdaccio
 
-RUN apk add --no-cache --virtual .build-deps \
+RUN apk add --no-cache --virtual \
+	.build-deps \
 	make \
-	python \
+	python3 \
+	&&  \
 	&& npm --global install verdaccio@3.11.6 \
 	&& apk del .build-deps \
 	&& apk add su-exec
