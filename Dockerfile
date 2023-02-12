@@ -1,4 +1,4 @@
-FROM node:11.14.0-alpine
+FROM node:19.4.0-alpine
 
 CMD [ "node", "verdaccio" ]
 ENTRYPOINT [ "/opt/docker/entrypoint.sh" ]
@@ -10,9 +10,10 @@ WORKDIR /var/opt/verdaccio
 COPY [ "src/entrypoint.sh", "/opt/docker/entrypoint.sh" ]
 COPY [ "src/config.yaml", "/var/opt/verdaccio" ]
 
-RUN apk add --no-cache --virtual .build-deps \
+RUN apk add --no-cache --virtual \
+	.build-deps \
 	make \
-	python \
+	python3 \
 	&& npm --global install verdaccio@3.11.6 \
 	&& apk del .build-deps \
 	&& chown -R node:node /var/opt/verdaccio \
