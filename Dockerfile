@@ -14,7 +14,7 @@ RUN apk add --no-cache --virtual \
 	.build-deps \
 	make \
 	python3 \
-	&& npm --global install verdaccio@3.11.6 \
+	&& npm --global install verdaccio@5.20.1 \
 	&& apk del .build-deps \
 	&& chown -R node:node /var/opt/verdaccio \
 	&& chmod -R 700 /var/opt/verdaccio
