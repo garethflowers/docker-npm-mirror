@@ -11,7 +11,7 @@ COPY [ "src/entrypoint.sh", "/opt/docker/entrypoint.sh" ]
 COPY [ "src/config.yaml", "/var/opt/verdaccio" ]
 
 RUN apk add --no-cache --virtual \
-  .build-deps \
+	.build-deps \
 	make \
 	python3 \
 	&& npm --global install verdaccio@3.11.6 \
