@@ -10,12 +10,7 @@ WORKDIR /var/opt/verdaccio
 COPY [ "src/entrypoint.sh", "/opt/docker/entrypoint.sh" ]
 COPY [ "src/config.yaml", "/var/opt/verdaccio" ]
 
-RUN apk add --no-cache --virtual \
-	.build-deps \
-	make \
-	python3 \
-	&& npm --global install verdaccio@5.20.1 \
-	&& apk del .build-deps \
+RUN npm --global install verdaccio@5.20.1 \
 	&& chown -R node:node /var/opt/verdaccio \
 	&& chmod -R 700 /var/opt/verdaccio
 
