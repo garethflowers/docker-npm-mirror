@@ -48,7 +48,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          platforms: linux/amd64,linux/arm64/v8,slinux/ppc64le
+          platforms: linux/amd64,linux/arm64/v8,linux/ppc64le
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.prep.outputs.tags }}
           labels: ${{ steps.prep.outputs.labels }}
