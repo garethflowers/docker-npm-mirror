@@ -1,11 +1,11 @@
 FROM node:22.4.0-alpine
 
-CMD [ "node", "verdaccio" ]
+CMD [ "node", "/usr/local/bin/verdaccio" ]
 ENTRYPOINT [ "/opt/docker/entrypoint.sh" ]
 EXPOSE 4873
 HEALTHCHECK CMD netstat -ln | grep 4873 || exit 1
 VOLUME [ "/var/opt/verdaccio" ]
-WORKDIR /var/opt/verdaccio
+WORKDIR "/var/opt/verdaccio"
 
 COPY [ "src/entrypoint.sh", "/opt/docker/entrypoint.sh" ]
 COPY [ "src/config.yaml", "/var/opt/verdaccio" ]
